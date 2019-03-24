@@ -1,0 +1,61 @@
+
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>Home Page </h1>
+  <p>Welcome to ignit website where we share ideas! </p>
+</div>
+
+
+
+<div class="container">
+    <br>
+    <a href = '{{url_for('newCatalogItem') }}' class="btn btn-primary btn-block" >Create New Post</a>
+<br><br>
+
+
+<div class = 'flash' class="alert alert-success">
+		      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+
+        <ul class="alert alert-success">
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+</div>
+<br><br>
+
+    {% for i in items %}
+<div class="col-sm">
+
+<h4>{{i.title}}</h4>
+
+<p>{{i.catalog_type}}</p>
+
+<p>{{i.content}}</p>
+
+
+
+<a href = '{{url_for('editCatalogItem', catalog_id = i.id ) }}' class="btn btn-secondary" >Edit</a>
+</br>
+<a href = '{{url_for('deleteCatalogItem', catalog_id = i.id) }}'  class="btn btn-danger">Delete</a>
+
+<hr>
+
+</div>
+
+
+{% endfor %}
+</div>
+</body>
+
+</html>

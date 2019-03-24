@@ -1,0 +1,27 @@
+<html>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>Home Page </h1>
+  <p>Welcome to ignit website where we share ideas! </p>
+</div>
+<div class="container">
+<h3> Are you sure you want to delete {{catalog.title}}? </h3>
+
+<form action="{{ url_for('deleteCatalogItem',catalog_id = catalog.id )}}" method = 'post'>
+
+<input type='submit', value = 'Delete'  class="btn btn-danger">
+
+
+
+
+</form>
+
+<a href= '{{url_for('showCatalogs')}}' class="btn btn-primary">Cancel</a>
+</div>
+</body>
+
+</html>
