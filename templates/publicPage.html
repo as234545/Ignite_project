@@ -1,0 +1,43 @@
+
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="jumbotron text-center"  >
+  <h1>Home Page </h1>
+  <p>Welcome to ignit website where we share ideas! </p>
+</div>
+
+
+
+<div class="container">
+    <br>
+<br><br>
+
+
+
+<br><br>
+
+    {% for i in itemsp %}
+<div class="col-sm">
+
+<h4>{{i.title}}</h4>
+
+<p>{{i.catalog_type}}</p>
+
+<p>{{i.content}}</p>
+
+
+<hr>
+
+</div>
+
+
+{% endfor %}
+</div>
+</body>
+
+</html>

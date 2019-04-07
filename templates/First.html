@@ -1,0 +1,157 @@
+
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+.vl {
+  border-left: 6px solid black;
+  height: 500px;
+}
+
+/* Split the screen in half */
+.split {
+  height: 150%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+</style>
+
+</head>
+<body>
+
+<div class="jumbotron text-center"  >
+  <h1>sign in page</h1>
+  <p>Welcome to ignit website where we share ideas! </p>
+</div>
+
+
+
+<div class="container">
+    <br>
+<br><br>
+
+
+
+<div class="split left">
+	<div class="centered">
+<form   class="needs-validation" novalidate>
+ 		<h3>Investor</h3>
+    <label for="uname">Username:</label>
+   
+    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+
+
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+ 
+  <div class="form-group form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="remember" required> I agree on the <a href="">terms and conditions</a> of the ignate website .
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Check this checkbox to continue.</div>
+    </label>
+  </div>
+    
+               <a href = '{{url_for('showCatalogsPublic') }}'  class="btn btn-primary btn-md">Login</a>
+
+</form>
+
+			</div>
+</div>
+</div>
+
+<div class="split right">
+  <div class="centered">
+
+<form   class="needs-validation" novalidate>
+	
+		<h3>Creator</h3>
+  <div class="form-group">
+    <label for="uname">Username:</label>
+      <div class="form-group">
+    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+</div>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+  </div>
+  <div class="form-group form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="remember" required> I agree on the <a href="">terms and conditions</a> of the ignate website .
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Check this checkbox to continue.</div>
+    </label>
+  </div>
+    
+               <a id = 'submit' name = 'submit' href = '{{url_for('showCatalogs') }}'  class="btn btn-primary btn-md">Login</a>
+
+</form>
+	
+			</div>
+</div></div>
+ 
+<script>
+// Disable form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+</div>
+</body>
+
+</html>

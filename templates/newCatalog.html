@@ -1,6 +1,6 @@
 <html>
 <head>
-    
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -9,20 +9,21 @@
 <body>
       <div class="jumbotron text-center" style="margin-bottom:0">
   <h1>Home Page </h1>
-  <p>Welcome to ignit website where we share ideas! </p> 
+  <p>Welcome to ignit website where we share ideas! </p>
 </div>
 <div class="container">
 <h3>  Create New Post  </h3>
 
 <form action="{{url_for('newCatalogItem')}}" method = 'POST'>
  <div class="form-group">
-<p>title:</p>
-<input class="form-control" type='text' size='30' name='title' required>
+<p>Title: <h9>format [a-zA-Z] </h9></p>
+
+<input class="form-control" type='text' size='30' name='title' required lang="en" pattern="[a-zA-Z]*">
 </div>
 <br>
  <div class="form-group">
 <p>Content</p>
-<textarea class="form-control" type='text' size='30' name='content' required></textarea> 
+<textarea class="form-control" type='text' size='30' name='content' required></textarea>
 </div>
 <br>
 

@@ -9,18 +9,21 @@
   <p>Welcome to ignit website where we share ideas! </p>
 </div>
 <div class="container">
-<h3> Are you sure you want to delete {{catalog.title}}? </h3>
+	<span class="alert alert-danger fade in">
+		<h3 > Are you sure you want to delete  "{{catalog.title}}" ?</h3>
+	</span>
+
 
 <form action="{{ url_for('deleteCatalogItem',catalog_id = catalog.id )}}" method = 'post'>
 
 <input type='submit', value = 'Delete'  class="btn btn-danger">
 
-
+<a href= '{{url_for('showCatalogs')}}' class="btn btn-primary">Cancel</a>
 
 
 </form>
 
-<a href= '{{url_for('showCatalogs')}}' class="btn btn-primary">Cancel</a>
+
 </div>
 </body>
 
